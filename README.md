@@ -1,1 +1,1 @@
-Repository for katas done on code warriors
+Repository for katas done on code wars
