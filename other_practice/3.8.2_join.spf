@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>employees</string>
+			<key>host</key>
+			<string>157.230.209.171</string>
+			<key>kcid</key>
+			<string>6700235227374837647</string>
+			<key>name</key>
+			<string>Data Science Database</string>
+			<key>port</key>
+			<integer>3306</integer>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>bayes_828</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0
+			b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRk
+			YXRhgAGoCwwXGBkaHiVVJG51bGzTDQ4PEBMWV05TLmtleXNaTlMu
+			b2JqZWN0c1YkY2xhc3OiERKAAoADohQVgASABYAHVHR5cGVUcm93
+			c18QHVNlbGVjdGlvbkRldGFpbFR5cGVOU0luZGV4U2V00hsPHB1c
+			TlNSYW5nZUNvdW50EACABtIfICEiWiRjbGFzc25hbWVYJGNsYXNz
+			ZXNaTlNJbmRleFNldKIjJFpOU0luZGV4U2V0WE5TT2JqZWN00h8g
+			JidcTlNEaWN0aW9uYXJ5oiYoWE5TT2JqZWN0AAgAEQAaACQAKQAy
+			ADcASQBMAFEAUwBcAGIAaQBxAHwAgwCGAIgAigCNAI8AkQCTAJgA
+			nQC9AMIAzwDRANMA2ADjAOwA9wD6AQUBDgETASABIwAAAAAAAAIB
+			AAAAAAAAACkAAAAAAAAAAAAAAAAAAAEs
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {694, 448}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>
+
+-- Use the employees database.
+
+use employees;
+
+-- Using the example in the Associative Table Joins section as a guide, write a query that shows each department along with the name of the current manager for that department.
+
+
+
+-- Find the name of all departments currently managed by women.
+
+
+
+
+-- Find the current titles of employees currently working in the Customer Service department.
+
+
+
+-- Find the current salary of all current managers.
+
+
+
+-- Find the number of employees in each department.
+
+
+
+-- Which department has the highest average salary?
+
+
+-- Who is the highest paid employee in the Marketing department?
+
+
+-- Which current department manager has the highest salary?
+
+
+
+
+-- Bonus Find the names of all current employees, their department name, and their current manager's name.
+
+
+
+-- Bonus Find the highest paid employee in each department.
+
+
+
+
+
+
+
+
+
+
+</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>303</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>-- Use the employees database.
+
+use employees</string>
+		<string>describe current_dept_emp</string>
+		<string>select distinct title from titles</string>
+		<string>use employees</string>
+		<string>SELECT count(*) - count(LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))))
+FROM employees</string>
+		<string>SELECT count(*) - count(LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))))
+FROM employees:</string>
+		<string>#Recall the query the generated usernames for the employees from the last lesson. Are there any duplicate usernames?
+#Bonus: how many duplicate usernames are there?
+
+SELECT count(LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2)))) 
+FROM employees</string>
+		<string>#Recall the query the generated usernames for the employees from the last lesson. Are there any duplicate usernames?
+#Bonus: how many duplicate usernames are there?
+
+SELECT count(LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2)))) 
+FROM employees
+GROUP BY user_name</string>
+		<string>#Recall the query the generated usernames for the employees from the last lesson. Are there any duplicate usernames?
+#Bonus: how many duplicate usernames are there?
+
+SELECT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, sum(*) as count
+FROM employees
+GROUP BY user_name</string>
+		<string>#Recall the query the generated usernames for the employees from the last lesson. Are there any duplicate usernames?
+#Bonus: how many duplicate usernames are there?
+
+SELECT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, sum(*) as count
+FROM employees
+GROUP BY user_name
+ORDER BY count DESC</string>
+		<string>#Recall the query the generated usernames for the employees from the last lesson. Are there any duplicate usernames?
+#Bonus: how many duplicate usernames are there?
+
+SELECT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count(*) as count
+FROM employees
+GROUP BY user_name
+ORDER BY count DESC</string>
+		<string>SELECT DISTINCT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count(user_name)
+FROM employees
+GROUP BY user_name</string>
+		<string>SELECT DISTINCT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count() as count
+FROM employees
+GROUP BY user_name</string>
+		<string>SELECT DISTINCT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count(*) as count
+FROM employees
+GROUP BY user_name</string>
+		<string>SELECT DISTINCT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count(*) as count
+FROM employees
+GROUP BY username</string>
+		<string>SELECT DISTINCT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count(*) as count
+FROM employees</string>
+		<string>#Recall the query the generated usernames for the employees from the last lesson. Are there any duplicate usernames?
+#Bonus: how many duplicate usernames are there?
+
+SELECT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count(*) as count
+FROM employees
+GROUP BY user_name
+ORDER BY count</string>
+		<string>#Recall the query the generated usernames for the employees from the last lesson. Are there any duplicate usernames?
+#Bonus: how many duplicate usernames are there?
+
+SELECT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count(*) as count
+FROM employees
+GROUP BY user_name
+WHERE count &gt; 1</string>
+		<string>#Recall the query the generated usernames for the employees from the last lesson. Are there any duplicate usernames?
+#Bonus: how many duplicate usernames are there?
+
+SELECT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count(*) as count
+FROM employees
+WHERE count &gt; 1
+GROUP BY user_name</string>
+		<string>#Recall the query the generated usernames for the employees from the last lesson. Are there any duplicate usernames?
+#Bonus: how many duplicate usernames are there?
+
+SELECT LOWER(concat(SUBSTR(first_name,1,1),SUBSTR(last_name,1,4),'_',SUBSTR(birth_date,6,2),SUBSTR(birth_date,3,2))) as user_name, count(*) as count
+FROM employees
+GROUP BY user_name</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.29-0ubuntu0.18.04.1-log</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
