@@ -1,0 +1,41 @@
+from matplotlib import pyplot as plt
+from collections import Counter
+import numpy as np
+import csv
+import pandas as pd
+
+# .counter()
+# .update()
+
+plt.style.use('fivethirtyeight') # use graph style
+
+data = pd.read_csv('data.csv')
+ids = data['Responder_id']
+lang_responses = data['LanguagesWorkedWith']
+
+# with open('data.csv') as csv_file:
+#     csv_reader = csv.DictReader(csv_file)
+
+language_counter = Counter()
+
+for responce in lang_responses:
+
+    language_counter.update(responce.split(';'))
+
+languages = []
+popularity = []
+
+for item in language_counter.most_common(15):
+    languages.append(item[0])
+    popularity.append(item[1])
+
+languages.reverse()
+popularity.reverse()
+
+plt.barh(languages,popularity)
+
+plt.title('Programming Language by Popularity')
+plt.ylabel('Programming Language')
+plt.xlabel('Popularity')
+
+plt.show()
