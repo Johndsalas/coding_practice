@@ -1,1 +1,1 @@
-Repository for katas done on code wars
+Repository for coding practice
