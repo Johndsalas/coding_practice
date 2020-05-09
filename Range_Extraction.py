@@ -15,9 +15,9 @@ def solution(args):
 
         beginning = number
 
-        check = number
+        check = args.index(number) + 1
 
-        while number + 1 == check:
+        while number + 1 == args[check]:
 
             try:
                 args.remove(check)
