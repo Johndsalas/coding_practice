@@ -4,6 +4,12 @@ env.py
 .DS_Store
 .vscode
 env/
+
+case.csv
+dept.csv
+source.csv
+sources_csv/
+sources_json/
   
 *#*#
 *.#*
