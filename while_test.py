@@ -16,8 +16,9 @@ while True:
     print(number)
 
 
-# loop changes on to false if number = 3, but dose not check for break conditions untill the end of the loop
-# prints 1, 2 and 3 
+# loop changes on to false if number = 3
+# checks for break conditions untill the end of the loop
+# prints 1, 2 and 3
 
 number = 0
 

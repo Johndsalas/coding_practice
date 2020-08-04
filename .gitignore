@@ -12,6 +12,8 @@ sources_csv/
 sources_json/
 wrangle_311/
   
+*.json
+
 *#*#
 *.#*
 *.iml
