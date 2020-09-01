@@ -153,19 +153,20 @@ denominator = number_of_trials
 
 def get_trial():
 
-    total = 2
-    desired_number = 2
-    number = 0
+    days = 5
+    beginning_total = 17
+    average= 3
+    sd = 2
+    desired_remaining_poptarts = 1
+    buy_total = 0
 
-    for t in range(1,total+1):
+    for t in range(1,days+1):
 
-        rng = r.randint(1,4)
+        buy = r.randint(average-sd,average+sd)
 
-        if rng == 1:
+        buy_total += buy
 
-            number += 1
-
-    if desired_number == number:
+    if beginning_total > buy_total:
 
         return True
 
@@ -180,5 +181,154 @@ for trial in range(1,number_of_trials+1):
         numerator += 1
 
 odds = numerator / denominator
+
+print(odds)
+
+# Compare Heights
+# Men have an average height of 178 cm and standard deviation of 8cm.
+# Women have a mean of 170, sd = 6cm.
+# If a man and woman are chosen at random, P(woman taller than man)?
+
+import random as r
+numerator = 0
+number_of_trials = 100000
+denominator = number_of_trials
+
+def get_trial():
+
+    male_ave = 178
+    male_sd = 16
+
+    female_ave = 170
+    female_sd = 12
+
+    male_hight = r.randint(male_ave - male_sd, male_ave + male_sd)
+    female_hight = r.randint(female_ave - female_sd, female_ave + female_sd)
+
+
+    if female_hight > male_hight:
+        
+        return True
+
+    else:
+
+        return False
+
+for trial in range(1,number_of_trials+1):
+
+    if get_trial():
+
+        numerator += 1
+
+odds = numerator / denominator
+
+print(odds)
+
+# When installing anaconda on a student's computer, there's a 1 in 250 chance that the download is corrupted and the installation fails. 
+# What are the odds that after having 50 students download anaconda, no one has an installation issue? 
+# 100 students?
+# What is the probability that we observe an installation issue within the first 150 students that download anaconda?
+# How likely is it that 450 students all download anaconda without an issue?
+
+
+import random as r
+numerator = 0
+number_of_trials = 100000
+denominator = number_of_trials
+
+def get_trial():
+
+    students = 50 #100 150 450
+
+    for student in range(1,students+1):
+
+        error = r.randint(1,250)
+
+        if error == 1:
+        
+            return False
+
+    return True
+
+for trial in range(1,number_of_trials+1):
+
+    if get_trial():
+
+        numerator += 1
+
+odds = numerator / denominator # odds of no failure, subtract from one to get odds of failure
+
+print(odds)
+
+# There's a 70% chance on any given day that there will be at least one food truck at Travis Park. 
+# However, you haven't seen a food truck there in 3 days. How unlikely is this?
+# How likely is it that a food truck will show up sometime this week?
+
+import random as r
+numerator = 0
+number_of_trials = 100000
+denominator = number_of_trials
+
+def get_trial():
+
+    days = 3 # change number for differint number of days
+
+    for day in range(1,days+1):
+
+        truck = r.randint(1,10)
+
+        if truck > 3:
+
+            return False
+
+    return True
+
+for trial in range(1,number_of_trials+1):
+
+    if get_trial():
+
+        numerator += 1
+
+odds = numerator / denominator # odds of no truck, subtract from one to get odds of truck
+
+print(odds)
+
+.3**3
+
+# If 23 people are in the same room, what are the odds that two of them share a birthday? 
+# What if it's 20 people? 40?
+
+
+import random as r
+numerator = 0
+number_of_trials = 100000
+denominator = number_of_trials
+
+def get_trial():
+
+    people = 40
+    bday_list = []
+
+    for person in range(1,people+1):
+
+        bday = r.randint(1,365)
+
+        if bday in bday_list:
+
+            return True
+
+        else:
+
+            bday_list.append(bday)
+
+    return False
+
+for trial in range(1,number_of_trials+1):
+
+    if get_trial():
+
+        numerator += 1
+
+odds = numerator / denominator # odds of no truck, subtract from one to get odds of truck
 
 print(odds)
