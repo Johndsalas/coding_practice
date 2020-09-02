@@ -332,3 +332,4 @@ for trial in range(1,number_of_trials+1):
 odds = numerator / denominator # odds of no truck, subtract from one to get odds of truck
 
 print(odds)
+
