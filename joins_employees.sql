@@ -62,6 +62,24 @@ where (dm.to_date = "9999_01_01") and (s.to_date = "9999_01_01")
 
 order by dept_name;
 -- 43.	Find the number of current employees in each department.
+
+select d.dept_no, d.dept_name, count(*)
+
+from employees as e
+
+join dept_emp as de using(emp_no)
+
+join departments as d using(dept_no)
+
+join salaries as s using(emp_no)
+
+where (s.to_date = "9999_01_01") and (de.to_date = "9999_01_01")
+
+group by d.dept_name
+
+order by d.dept_no asc;
+
+
 -- 57.	Which department has the highest average salary? Hint: Use current not historic information.
 -- 63.	Who is the highest paid employee in the Marketing department?
 -- 69.	Which current department manager has the highest salary?
