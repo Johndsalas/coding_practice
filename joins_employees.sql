@@ -81,6 +81,52 @@ order by d.dept_no asc;
 
 
 -- 57.	Which department has the highest average salary? Hint: Use current not historic information.
+select dept_name, avg(salary) as "highest_salary"
+
+from salaries as s
+
+join employees as e using(emp_no)
+
+join dept_emp as de using(emp_no)
+
+join departments as d using(dept_no)
+
+where (s.to_date = "9999_01_01") and (de.to_date = "9999_01_01")
+
+group by dept_name
+
+order by avg(salary) desc
+
+limit 1;
+
 -- 63.	Who is the highest paid employee in the Marketing department?
+select concat(first_name, " ", last_name) as "highest_paid_employee", salary
+
+from dept_emp as de 
+
+join employees using(emp_no)
+
+join salaries as s using(emp_no)
+
+join departments as d using(dept_no)
+
+where (s.to_date = "9999_01_01") and (de.to_date = "9999_01_01") and (d.dept_name = "Marketing")
+
+order by salary desc
+
+limit 1;
+
 -- 69.	Which current department manager has the highest salary?
--- 75.	Bonus Find the names of all current employees, their department name, and their current manager's name.
+select first_name, last_name, salary, dept_name
+
+from dept_manager as dm
+
+join employees using(emp_no)
+
+join salaries as s using(emp_no)
+
+join dept_emp as de using(emp_no)
+
+join departments as d on de.dept_no = d.dept_no
+
+where (s.to_date = "9999_01_01") and (de.to_date = "9999_01_01") and (dm.to_date = "9999_01_01");
