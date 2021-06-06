@@ -35,12 +35,85 @@ where emp_no in (select distinct emp_no
 				   join dept_emp as de using(emp_no)
 				   where (s.to_date != "9999-01-01"));
 -- 4.	Find all the current department managers that are female. List their names in a comment in your code.
-select dept_name, concat(e.first_name, " ", e.last_name) as "female_department_managers"
+select concat(e.first_name, " ", e.last_name) as "female_department_managers", dept_name
 
-from departments 
+from dept_manager as dm
+
+join departments as d using(dept_no)
+
+join employees as e using(emp_no)
+
+where emp_no in (select emp_no
+				 from employees
+			   where gender = "F")
+
+and (dm.to_date = "9999-01-01");
  -- 5.	Find all the employees who currently have a higher salary than the companies overall, historical average salary.
+ select concat(e.first_name, " ", e.last_name) as "high_wage_earner", salary
+ 
+ from employees as e 
+ 
+ join salaries using(emp_no)
+ 
+ where salary > (select avg(salary)
+ 			    from salaries)
+ 			    
+ and to_date = "9999_01-01"; 
 -- 6.	How many current salaries are within 1 standard deviation of the current highest salary? (Hint: you can use a built in function to calculate the standard deviation.) What percentage of all salaries is this?
+select count(*)
+
+from salaries
+
+where salary >= (select max(salary)-stddev(salary)
+ 			     from salaries)
+ 			    
+and to_date = "9999_01-01";
 -- BONUS
 -- 1.	Find all the department names that currently have female managers.
+select concat(e.first_name, " ", e.last_name) as "female_department_managers", dept_name
+
+from dept_manager as dm
+
+join departments as d using(dept_no)
+
+join employees as e using(emp_no)
+
+where emp_no in (select emp_no
+				 from employees
+			   where gender = "F")
+
+and (dm.to_date = "9999-01-01");
 -- 2.	Find the first and last name of the employee with the highest salary.
+select concat(e.first_name, " ", e.last_name) as "money_bags"
+
+from employees as e
+
+join salaries using(emp_no)
+
+where salary = (select max(salary)
+				from salaries
+			  where to_date = "9999-01-01");
+
 -- 3.	Find the department name that the employee with the highest salary works in.
+select concat(e.first_name, " ", e.last_name) as "money_bags", dept_name
+
+from employees as e
+
+join salaries using(emp_no)
+
+join dept_emp using(emp_no)
+
+join departments using(dept_no)
+
+where salary = (select max(salary)
+				from salaries
+			    where to_date = "9999-01-01");
+
+
+
+
+
+
+
+
+
