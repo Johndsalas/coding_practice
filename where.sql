@@ -18,7 +18,7 @@ select *
 
 from employees 
 
-where first_name = 'Irena' or first_name = 'Vidya' or first_name = 'Maya';
+where (first_name = 'Irena' or first_name = 'Vidya' or first_name = 'Maya');
 
 -- 4.	Find all current or previous employees with first names 'Irena', 'Vidya', or 'Maya', using OR, and who is male. Enter a comment with the number of records returned.
 

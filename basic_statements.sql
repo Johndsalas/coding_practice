@@ -6,7 +6,9 @@
 USE albums_db;
 
 -- 2.	Explore the structure of the albums table.
-select * from albums;
+select * 
+
+from albums;
 
 -- 3.	Write queries to find the following information:
 -- a. The name of all albums by Pink Floyd
@@ -39,11 +41,11 @@ select name
 
 from albums 
 
-where release_date between 1989 and 1999;
+where release_date between 1990 and 1999;
 
 -- e. Which albums had less than 20 million certified sales
 
-select name, sales
+select name
 
 from albums
 
@@ -51,7 +53,7 @@ where sales < 20;
 
 -- f. All the albums with a genre of "Rock". 
 
-select name, genre
+select name
 
 from albums 
 
